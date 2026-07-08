@@ -1,5 +1,5 @@
 
-
+/* create a style for Card.jsx*/
 .container{
     display: flex;
     flex-direction: column;
@@ -13,4 +13,14 @@
     margin: 4px;
     padding: 4px;
     box-shadow: 4px 8px 12px #0b126dcc;
+}
+.container h2{
+    font: 800;
+    font-size: 24px;   
+    margin-bottom: 8px;
+}
+.container p{
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
 }
