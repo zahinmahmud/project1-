@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Card from './components/Card';
 import CardDetail from './components/Datafetch/CardDetail';
 import Data from "./components/Datafetch/data.json"
+import CardDetails from './components/Datafetch/CardDetails';
 
 function App() {
 
@@ -10,6 +11,8 @@ function App() {
   for (let x = 0; x < Data.length; x++) {
     items.push(<CardDetail  title={Data[x].title} desc={Data[x].desc} />)
   }
+
+  const itemDetails  = Data.map((item1)=> (<CardDetails  title ={item1.title} desc={item1.desc}/>))
   return (
     <div>
       <Navbar />
@@ -27,6 +30,9 @@ function App() {
 
       <div style={{display:'flex'}}>
                 {items}
+      </div>
+      <div style={{display:"flex"}}>
+        {itemDetails}
       </div>
     </div>
   )
