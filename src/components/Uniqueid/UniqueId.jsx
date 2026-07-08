@@ -41,11 +41,12 @@ function UniqueId() {
 <div style={{display:"flex"}}>
 
         {todos.map((todo)=>{
+            const {id , title,description} =todo
             return (
-                <div key={todo.id}  className='container'>
+                <div key={id}  className='container'>
 
-                <h3>{todo.title}</h3>
-                <p>{todo.description}</p>
+                <h3>{title}</h3>
+                <p>{description}</p>
             </div>
             )
         })}
