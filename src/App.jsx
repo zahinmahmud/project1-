@@ -4,15 +4,15 @@ import Card from './components/Card';
 import CardDetail from './components/Datafetch/CardDetail';
 import Data from "./components/Datafetch/data.json"
 import CardDetails from './components/Datafetch/CardDetails';
-
+import UniqueId from './components/Uniqueid/UniqueId';
 function App() {
 
   let items = [];
   for (let x = 0; x < Data.length; x++) {
-    items.push(<CardDetail  title={Data[x].title} desc={Data[x].desc} />)
+    items.push(<CardDetail key={x} title={Data[x].title} desc={Data[x].desc} />)
   }
 
-  const itemDetails  = Data.map((item1)=> (<CardDetails  title ={item1.title} desc={item1.desc}/>))
+  const itemDetails  = Data.map((item1,index)=> (<CardDetails  key={index} title ={item1.title} desc={item1.desc}/>))
   return (
     <div>
       <Navbar />
@@ -33,6 +33,10 @@ function App() {
       </div>
       <div style={{display:"flex"}}>
         {itemDetails}
+      </div>
+
+      <div style={{display:'flex'}}>
+        <UniqueId/>
       </div>
     </div>
   )
